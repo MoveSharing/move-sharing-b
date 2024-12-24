@@ -8,6 +8,8 @@ node_modules/
 dist/
 web-build/
 expo-env.d.ts
+android
+ios
 
 # Native
 *.orig.*
@@ -36,3 +38,10 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
