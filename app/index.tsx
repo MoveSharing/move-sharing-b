@@ -1,15 +1,39 @@
-import { Text, View } from "react-native";
+import React from "react";
+import { Button, View, StyleSheet, SafeAreaView } from "react-native";
 
-export default function Index() {
+import { Amplify } from "aws-amplify";
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
+
+import outputs from "../amplify_outputs.json";
+
+Amplify.configure(outputs);
+
+const SignOutButton = () => {
+  const { signOut } = useAuthenticator();
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Hello world</Text>
+    <View style={styles.signOutButton}>
+      <Button title="Sign Out" onPress={signOut} />
     </View>
   );
-}
+};
+
+const Index = () => {
+  return (
+    <Authenticator.Provider>
+      <Authenticator>
+        <SafeAreaView>
+          <SignOutButton />
+        </SafeAreaView>
+      </Authenticator>
+    </Authenticator.Provider>
+  );
+};
+
+const styles = StyleSheet.create({
+  signOutButton: {
+    alignSelf: "flex-end",
+  },
+});
+
+export default Index;
