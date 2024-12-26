@@ -1,0 +1,147 @@
+{
+    "screens":{
+        "splash":{
+            "getStarted":"Crea il tuo account",
+            "haveAccount":"Hai già un account ? ",
+            "login":"Accedi"
+        },
+        "login":{
+            "title":"Accedi al tuo account",
+            "email":"Email",
+            "password":"Password",
+            "forgotPassword":"Password dimenticata ?",
+            "login":"Accedi",
+            "dontHaveAccount":"Non hai un account ? ",
+            "signup":"Registrati",
+            "info":"Continuando accetti i Termini e condizioni di E-VAI S.r.l. I tuoi dati personali saranno trattati in accordo con la nostra Privacy Policy."
+        },
+        "signup":{
+            "profile":{
+                "title":"Dettagli profilo",
+                "profile":{
+                    "title":"Profilo",
+                    "desc":"Scegli la tiplogia di profilo che vuoi creare. In base al profilo selezionato ti chiederemo alcune informazioni obbligatorie. Importante: non potrai modificare questa informazione dopo la registrazione.",
+                    "tip":{
+                        "private_citizen": {
+                            "title": "Privato cittadino",
+                            "description": "Iscrizione di una persona privata",
+                            "payment": "Addebito diretto sul proprio metodo di pagamento personale",
+                            "access": "Accesso standard al servizio aperto al pubblico"
+                        },
+                        "freelancer": {
+                            "title": "Libero professionista",
+                            "description": "Iscrizione di una persona privata titolare di p.iva o ditta individuale",
+                            "payment": "Addebito diretto sul proprio metodo di pagamento aziendale",
+                            "access": "Accesso standard al servizio disponibile al pubblico"
+                        },
+                        "company_employee": {
+                            "title": "Dipendente aziendale",
+                            "description": "Iscrizione di una persona privata dipendente di un'azienda convenzionata",
+                            "payment": "Addebito diretto sul proprio metodo di pagamento personale o aziendale",
+                            "access": "Accesso standard al servizio disponibile al pubblico e postazioni dedicate"
+                        },
+                        "public_employee": {
+                            "title": "Dipendente ente pubblico",
+                            "description": "Iscrizione di una persona privata dipendente di un ente pubblico convenzionato",
+                            "payment": "Addebito diretto sul proprio metodo di pagamento personale o aziendale",
+                            "access": "Accesso solo alle postazioni dedicate all'ente pubblico"
+                        },
+                        "healthcare_employee": {
+                            "title": "Dipendente struttura sanitaria",
+                            "description": "Iscrizione di una persona privata dipendente di una struttura ospedaliera convenzionata",
+                            "payment": "Addebito diretto sul proprio metodo di pagamento personale o aziendale",
+                            "access": "Accesso standard al servizio disponibile al pubblico e postazioni dedicate"
+                        },
+                        "university_employee": {
+                            "title": "Dipendente università",
+                            "description": "Iscrizione di una persona privata dipendente di un'università convenzionata",
+                            "payment": "Addebito diretto sul proprio metodo di pagamento personale o aziendale",
+                            "access": "Accesso standard al servizio disponibile al pubblico e postazioni dedicate"
+                        }
+                    }
+                },
+                "company":{
+                    "title":"Azienda",
+                    "desc":"Scegli l'azienda della quale sei dipendente. In base al profilo selezionato ti chiederemo alcune informazioni obbligatorie. Importante: non potrai modificare questa informazione dopo la registrazione."
+                },
+                "secretCode":{
+                    "title":"Codice segreto",
+                    "desc":"Inserisci il codice segreto che ti è stato comunicato dall'azienda di cu fai parte."
+                },
+                "name":{
+                    "title":"Name",
+                    "desc":"Inserisci il tuo nome come riportato sul tuo documento di identità."
+                },
+                "surname":{
+                    "title":"Cognome",
+                    "desc":"Inserisci il tuo cognome come riportato sul tuo documento di identità."
+                },
+                "email":{
+                    "title":"Email",
+                    "desc":"Verifica attentamente la correttezza del tuo indirizzo email. Ti invieremo una email di controllo per verificare la tua identità.",
+                    "tip":{
+                            "description": "L'indirizzo email è un dato personale e univoco, pertanto può essere associato ad un solo cliente regolarmente registrato e attivo.",
+                            "instruction_personal": "Inserisci un indirizzo email personale per registrarti come:",
+                            "roles_personal": {
+                            "private_citizen": "Privato cittadino",
+                            "freelancer": "Libero professionista",
+                            "university_employee": "Dipendente università",
+                            "healthcare_employee": "Dipendente struttura sanitaria"
+                            },
+                            "instruction_business": "Inserisci un indirizzo email aziendale per registrarti come:",
+                            "roles_business": {
+                            "company_employee": "Dipendente aziendale",
+                            "public_employee": "Dipendente ente pubblico"
+                            }
+                        }
+                },
+                "phone":{
+                    "prefix":"Prefisso",
+                    "number":"Numero di telefono",
+                    "desc":"Puoi inserire solo numeri di telefoni cellulari.",
+                    "tip":{
+                            "description": "Il numero di telefono è un dato personale e univoco, pertanto può essere associato ad un solo cliente regolarmente registrato e attivo.",
+                            "usage": "Il tuo numero di telefono mobile ci serve per identificarti se dovessi contattare la nostra assistenza clienti e per poterti offrire un servizio migliore."
+                        }
+                },
+                "password":{
+                    "title":"Password"
+                },
+                "repeatPassword":{
+                    "title":"Ripeti Password",
+                    "desc":"La password deve contenere almeno 8 caratteri, con lettere maiuscole, minuscole, numeri e simboli (es: P@ssw0rd!)."
+                }
+            },
+            "convention":{
+                "title":"Convenzione & Promozione"
+            },
+            "buttons":{
+                "continue":"Continuare"
+            }
+        }
+    },
+    "errors":{
+            "name":{
+                "required":"Nome è obbligatorio"
+            },
+            "surname":{
+                "required":"Cognome è obbligatorio"
+            },
+            "phone":{
+                "prefix":"Prefisso è obbligatorio",
+                "required":"Numero di telefono è obbligatorio",
+                "invalid":"Numero di telefono non valido"
+            },
+            "email":{
+                "required":"Email è obbligatorio",
+                "invalid":"Email non valido"
+            },
+            "password":{
+                "required":"Password è obbligatorio",
+                "minLength":"Password deve contenere almeno 8 caratteri"
+            },
+            "repeatPassword":{
+                "required":"Ripeti Password è obbligatorio"
+            }
+        }
+}

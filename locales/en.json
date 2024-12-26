@@ -1,0 +1,150 @@
+{
+    "screens":{
+        "splash":{
+            "getStarted":"Get Started",
+            "haveAccount":"Already have an account ? ",
+            "login":"Log in"
+        },
+        "login":{
+            "title":"Log to your account",
+            "email":"Email",
+            "password":"Password",
+            "forgotPassword":"Forgot password ?",
+            "login":"Log in",
+            "dontHaveAccount":"Don't have an account ? ",
+            "signup":"Sign Up",
+            "info":"By continuing you accept Terms and conditions by E-VAI S.r.l. Your personal data will be processed in accordance with ours Privacy Policy."
+        },
+        "signup":{
+            "profile":{
+                "title":"Profile Details",
+                "profile":{
+                    "title":"Profile",
+                    "desc":"Choose the profile typology you want to create. Based on the selected profile, we will ask you for some mandatory information. Important: you will not be able to change this information after registration.",
+                    "tip":{
+                        "private_citizen": {
+                            "title": "Private citizen",
+                            "description": "Registration of a private individual",
+                            "payment": "Direct debit on their personal payment method",
+                            "access": "Standard access to the service open to the public"
+                        },
+                        "freelancer": {
+                            "title": "Freelancer",
+                            "description": "Registration of a private individual holding a VAT number or sole proprietorship",
+                            "payment": "Direct debit on their business payment method",
+                            "access": "Standard access to the service available to the public"
+                        },
+                        "company_employee": {
+                            "title": "Company employee",
+                            "description": "Registration of a private individual employed by an affiliated company",
+                            "payment": "Direct debit on their personal or business payment method",
+                            "access": "Standard access to the service available to the public and dedicated workstations"
+                        },
+                        "public_employee": {
+                            "title": "Public sector employee",
+                            "description": "Registration of a private individual employed by an affiliated public institution",
+                            "payment": "Direct debit on their personal or business payment method",
+                            "access": "Access only to workstations dedicated to the public institution"
+                        },
+                        "healthcare_employee": {
+                            "title": "Healthcare employee",
+                            "description": "Registration of a private individual employed by an affiliated hospital",
+                            "payment": "Direct debit on their personal or business payment method",
+                            "access": "Standard access to the service available to the public and dedicated workstations"
+                        },
+                        "university_employee": {
+                            "title": "University employee",
+                            "description": "Registration of a private individual employed by an affiliated university",
+                            "payment": "Direct debit on their personal or business payment method",
+                            "access": "Standard access to the service available to the public and dedicated workstations"
+                        }
+                    }
+                },
+                "company":{
+                    "title":"Company",
+                    "desc":"Choose the company you are employed in. Based on the selected profile, we will ask you for some mandatory information. Important: you will not be able to change this information after registration."
+                },
+                "secretCode":{
+                    "title":"Secret Code",
+                    "desc":"Enter the secret code that was communicated to you by the company you are part of."
+                },
+                "name":{
+                    "title":"Name",
+                    "desc":"Enter your name as shown on your identity document."
+                },
+                "surname":{
+                    "title":"Surname",
+                    "desc":"Enter your surname as shown on your identity document."
+                },
+                "email":{
+                    "title":"Email",
+                    "desc":"Check carefully the correctness of your email address. We will send you a check email to verify your identity.",
+                    "tip":{
+                            "description": "The email address is a personal and unique data point, therefore it can be associated with only one regularly registered and active customer.",
+                            "instruction_personal": "Enter a personal email address to register as:",
+                            "roles_personal": {
+                            "private_citizen": "Private citizen",
+                            "freelancer": "Freelancer",
+                            "university_employee": "University employee",
+                            "healthcare_employee": "Healthcare employee"
+                            },
+                            "instruction_business": "Enter a business email address to register as:",
+                            "roles_business": {
+                            "company_employee": "Company employee",
+                            "public_employee": "Public sector employee"
+                            }
+                        }
+                },
+                "phone":{
+                    "prefix":"Prefix",
+                    "number":"Phone Number",
+                    "desc":"You can only enter cell phone numbers.",
+                    "tip":{
+                        "phone_information": {
+                            "description": "The phone number is a personal and unique data point, therefore it can be associated with only one regularly registered and active customer.",
+                            "usage": "We need your mobile phone number to identify you if you contact our customer support and to provide you with a better service."
+                        }
+                      }
+                      
+                },
+                "password":{
+                    "title":"Password"
+                },
+                "repeatPassword":{
+                    "title":"Repeat Password",
+                    "desc":"The password must contain at least 8 characters, with uppercase, lowercase letters, numbers and symbols (eg: P @ ssw0rd!)."
+                }
+            },
+            "convention":{
+                "title":"Convention & Promotion"
+            },
+            "buttons":{
+                "continue":"Continue"
+            }
+        }
+    },
+    "errors":{
+            "name":{
+                "required":"Name is required"
+            },
+            "surname":{
+                "required":"Surname is required"
+            },
+            "phone":{
+                "prefix":"Prefix is required",
+                "required":"Phone number is required",
+                "invalid":"Phone number is invalid"
+            },
+            "email":{
+                "required":"Email is required",
+                "invalid":"Email is invalid"
+            },
+            "password":{
+                "required":"Password is required",
+                "minLength":"Password must be at least 8 characters"
+            },
+            "repeatPassword":{
+                "required":"Repeat password is required"
+            }
+        }
+}
