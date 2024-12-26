@@ -1,4 +1,5 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
+import { postConfirmation } from '../auth/post-confirmation/resource';
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -7,12 +8,35 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
-    .model({
-      content: a.string(),
-    })
-    .authorization((allow) => [allow.guest()]),
-});
+  User: a
+      .model({
+          id: a.id(),
+          email: a.string(),
+          profileOwner: a.string(),
+          vehicles: a.hasMany("Vehicle", "userId"),
+      })
+      .authorization((allow) => [allow.guest()]),
+  Vehicle: a.model({
+      imei: a.id(),
+      userId: a.string(),
+      User: a.belongsTo("User", "userId"),
+  })
+  .authorization((allow) => [
+    allow.authenticated().to(["read"]),
+    allow.owner()
+  ]),
+  Trip: a.model({
+      id:a.id().required(),
+      vehicleId:a.string().required(),
+      userId:a.string().required(),
+      startLocation:a.string(),
+      endLocation:a.string(),
+      startTime:a.string(),
+      endTime:a.string(),
+      distance:a.float(),
+      duration:a.float(),
+  }).authorization((allow) => [allow.authenticated().to(["read","create","update","delete"])])
+}).authorization((allow) => [allow.resource(postConfirmation)]);;
 
 export type Schema = ClientSchema<typeof schema>;
 
