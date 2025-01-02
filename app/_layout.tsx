@@ -19,8 +19,6 @@ export default function RootLayout() {
           tabBarActiveTintColor:Colors.primary ,
           tabBarStyle:{
             backgroundColor:Colors.secondary,
-            borderTopLeftRadius:20,
-            borderTopRightRadius:20,
             height:60,
             paddingTop:7
           },
