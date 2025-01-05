@@ -10,6 +10,16 @@ import Feather from '@expo/vector-icons/Feather';
 import MainScreenHeader from "@/components/headers/MainScreenHeader";
 import { useColors } from "@/hooks/useColors";
 Amplify.configure(outputs);
+
+
+const existingConfig = Amplify.getConfig();
+Amplify.configure({
+  ...existingConfig,
+  API: {
+    ...existingConfig.API,
+    REST: outputs.custom.API,
+  },
+});
 export default function RootLayout() {
   const Colors=useColors();
   return (

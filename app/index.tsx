@@ -14,9 +14,23 @@ import { assets } from "@/assets";
 //     </View>
 //   );
 // };
+import { get } from 'aws-amplify/api';
 
+async function getItem() {
+  try {
+    const restOperation = get({ 
+      apiName: 'myRestApi',
+      path: 'items' 
+    });
+    const response = await restOperation.response;
+    console.log('GET call succeeded: ', (await response.body.json()));
+  } catch (error) {
+    console.log('GET call failed:');
+  }
+}
 const Index = () => {
   const Colors=useColors();
+  getItem();
   return (
         <SafeAreaView style={{backgroundColor:"white",flex:1}}>
           <ScrollView style={{flex:1}}>
