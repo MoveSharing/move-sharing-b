@@ -65,7 +65,7 @@ const Index = () => {
                   top:10
                 }}>Model</Text>
                 <Text style={{fontStyle:"italic",fontSize:40,fontWeight:"900"}}>
-                  Scooter X
+                  Scooter Z
                 </Text>
                   <Image source={assets.scooter} style={{width:150,height:150}}/>
             </View>
