@@ -27,28 +27,32 @@ const myRestApi = new RestApi(apiStack, "RestApi", {
     allowHeaders: Cors.DEFAULT_HEADERS, // Specify only the headers you need to allow
   },
 });
+
+// lambda to integrate with the API
 const lambdaIntegration = new LambdaIntegration(
   backend.myApiFunction.resources.lambda
 );
 
-// create a new resource path with IAM authorization
-const itemsPath = myRestApi.root.addResource("items", {
-  defaultMethodOptions: {
-    authorizationType: AuthorizationType.IAM,
-  },
-});
 
-// add methods you would like to create to the resource path
-itemsPath.addMethod("GET", lambdaIntegration);
-itemsPath.addMethod("POST", lambdaIntegration);
-itemsPath.addMethod("DELETE", lambdaIntegration);
-itemsPath.addMethod("PUT", lambdaIntegration);
+/**
+ *  IAM VS Cognito as autherization TODO: look at documentation
+ */
+//  /vehicle
 
-// add a proxy resource path to the API
-itemsPath.addProxy({
-  anyMethod: true,
+const VehicleApi = myRestApi.root.addResource("vehicle",{
   defaultIntegration: lambdaIntegration,
-});
+    defaultMethodOptions: {
+        authorizationType: AuthorizationType.IAM,
+    },
+
+})
+// /vehicle/start
+VehicleApi.addResource("start").addMethod("POST",lambdaIntegration);
+
+VehicleApi.addResource("stop").addMethod("POST",lambdaIntegration);
+
+
+
 // create a new Cognito User Pools authorizer
 const cognitoAuth = new CognitoUserPoolsAuthorizer(apiStack, "CognitoAuth", {
   cognitoUserPools: [backend.auth.resources.userPool],
@@ -66,8 +70,8 @@ const apiRestPolicy = new Policy(apiStack, "RestApiPolicy", {
     new PolicyStatement({
       actions: ["execute-api:Invoke"],
       resources: [
-        `${myRestApi.arnForExecuteApi("*", "/items", "dev")}`,
-        `${myRestApi.arnForExecuteApi("*", "/items/*", "dev")}`,
+        `${myRestApi.arnForExecuteApi("*", "/vehicle", "dev")}`,
+        `${myRestApi.arnForExecuteApi("*", "/vehicle/*", "dev")}`,
         `${myRestApi.arnForExecuteApi("*", "/cognito-auth-path", "dev")}`,
       ],
     }),

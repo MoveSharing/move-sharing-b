@@ -9,20 +9,21 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "sandbox": "npx ampx sandbox --stream-function-logs --profile move"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
     "@aws-amplify/react-native": "^1.1.6",
-    "@aws-amplify/ui-react-native": "^2.2.20",
+    "@aws-amplify/ui-react-native": "^2.3.1",
     "@expo/vector-icons": "^14.0.2",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/netinfo": "^11.4.1",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
-    "aws-amplify": "^6.11.0",
+    "aws-amplify": "^6.12.0",
     "expo": "~52.0.23",
     "expo-blur": "~14.0.1",
     "expo-constants": "~17.0.3",
@@ -36,6 +37,7 @@
     "expo-system-ui": "~4.0.6",
     "expo-web-browser": "~14.0.1",
     "i18next": "^24.2.0",
+    "mqtt": "^5.10.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-i18next": "^15.2.0",
@@ -50,6 +52,7 @@
     "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
+    "winston": "^3.17.0",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
